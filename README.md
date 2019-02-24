@@ -18,6 +18,8 @@ This project uses some third-party assets with a license that requires attributi
 - [Filter Menu Design](https://dribbble.com/shots/1956586-Filter-Menu) by Anton Aheichanka.
 - Poppins Font: by Indian Type Foundry (Poppins at Google Fonts)
 
+_NOTE: Related to the sample, I also want to highlight [Xamarin.Forms.RadialMenu](https://github.com/arqueror/Xamarin.Forms-RadialMenu) by Ricardo Vasquez._
+
 ## Copyright and license
 
 Code released under the [MIT license](https://opensource.org/licenses/MIT).
