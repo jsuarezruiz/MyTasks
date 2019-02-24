@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"     
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:templates="clr-namespace:MyTasks.Views.Templates"
+          x:Class="MyTasks.Views.Cells.TaskItemViewCell">
+    <templates:TaskItemTemplate
+        x:Name="TaskItemTemplate"
+        Opacity="0" />
+</ViewCell>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyTasks.Controls.FilterMenu">
+    <ContentView.Content>
+        <Grid>
+            <Image 
+                x:Name="OuterCircle" 
+                WidthRequest="60"
+                HeightRequest="60" 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Source="outer_circle"/>
+            <Image 
+                x:Name="InnerButtonMenu" 
+                Opacity="1" 
+                WidthRequest="60" 
+                HeightRequest="60"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Source="menu_circle"/>
+            <Image 
+                x:Name="InnerButtonClose" 
+                Opacity="0" 
+                WidthRequest="60"
+                HeightRequest="60"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" 
+                Source="close_circle"/>
+            <!-- N -->
+            <Image 
+                x:Name="N" 
+                Opacity="0"
+                Margin="0,-60,0,60"
+                Source="check" 
+                Aspect="AspectFit"
+                WidthRequest="40" 
+                HeightRequest="40" 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            <!-- NW -->
+            <Image 
+                x:Name="NW"
+                Opacity="0" 
+                Margin="0,-60,130,0" 
+                Source="poweroff" 
+                Aspect="AspectFit"
+                WidthRequest="40" 
+                HeightRequest="40"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill" />
+            <!-- SW -->
+            <Image 
+                x:Name="SW" 
+                Opacity="0"
+                Margin="0,60,130,0"
+                Source="time"
+                Aspect="AspectFit"
+                WidthRequest="40"
+                HeightRequest="40" 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            <!-- S -->
+            <Image 
+                x:Name="S" 
+                Opacity="0" 
+                Margin="0,60,0,-60" 
+                Source="warning"
+                Aspect="AspectFit"
+                WidthRequest="40"
+                HeightRequest="40"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

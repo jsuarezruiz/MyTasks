@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   	
+    xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:templates="clr-namespace:MyTasks.Views.Templates"
+    xmlns:controls="clr-namespace:MyTasks.Controls"
+    xmlns:cells="clr-namespace:MyTasks.Views.Cells"
+    x:Class="MyTasks.Views.MyTasksView"
+    BackgroundColor="{StaticResource WhiteColor}"
+    Title="Timeline">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="ProfileStyle" TargetType="imageCircle:CircleImage">
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="NameTextStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsRegular}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSize28}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style x:Key="JobTextStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsLight}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSize18}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style x:Key="LineStyle" TargetType="BoxView">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Fill" />
+                <Setter Property="WidthRequest" Value="1" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- TASK LIST -->
+            <Grid      
+                Grid.Row="1"
+                Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView  
+                    Grid.Column="0"
+                    BackgroundColor="Black"
+                    Style="{StaticResource LineStyle}" />
+                <ListView 
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    ItemsSource="{Binding Tasks}"
+                    SelectionMode="None"
+                    HasUnevenRows="True"
+                    SeparatorVisibility="None">
+                    <ListView.Header>
+                        <templates:TaskHeaderTemplate />
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <cells:TaskItemViewCell />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <!-- HEADER -->
+            <Grid
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Margin="0, 0, 0, 40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView  
+                    Grid.Column="0"
+                    BackgroundColor="Black"
+                    Style="{StaticResource LineStyle}" />
+                <controls:PathImage   
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+                <!-- USER INFORMATION -->
+                <Grid 
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HeightRequest="120"
+                    VerticalOptions="End"
+                    Margin="12, 48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <imageCircle:CircleImage    
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Source="face1"
+                        Aspect="AspectFit"
+                        Style="{StaticResource ProfileStyle}"/>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Ryan Barnes"
+                        Style="{StaticResource NameTextStyle}"/>
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Text="Product Designer"
+                        Style="{StaticResource JobTextStyle}"/>
+                </Grid>
+            </Grid>
+            <!-- RADIAL MENU FILTER -->
+            <Grid        
+                Grid.Row="1"
+                HorizontalOptions="End"
+                Margin="0, 0, -24, 0">
+                <controls:FilterMenu 
+                    SelectedCommand="{Binding ItemSelectedCommand}"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
