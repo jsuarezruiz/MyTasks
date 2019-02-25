@@ -109,7 +109,7 @@
                         Grid.Column="0"
                         Grid.Row="0"
                         Grid.RowSpan="2"
-                        Source="face1"
+                        Source="face1.jpg"
                         Aspect="AspectFit"
                         Style="{StaticResource ProfileStyle}"/>
                     <Label

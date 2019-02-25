@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ResourceDictionary  
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -20,8 +20,8 @@
     <!-- FONTS -->
     <OnPlatform x:Key="PoppinsBold"
                 x:TypeArguments="x:String"
-                iOS="Poppins_Bold"
-                Android="Poppins_Bold.ttf#Poppins"/>
+                iOS="Poppins-Bold"
+                Android="Poppins-Bold.ttf#Poppins"/>
 
     <OnPlatform x:Key="PoppinsLight"
                 x:TypeArguments="x:String"
